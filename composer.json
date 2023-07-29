@@ -1,6 +1,6 @@
 {
-    "name": "alexmacarthur/picperf",
-    "description": "Automatic image optimization for the URLs you already have.",
+    "name": "alexmacarthur/picperf-lite",
+    "description": "Automatic, non-invasive optimization and aggressive caching for your site's images.",
     "type": "library",
     "license": "GPL-2.0",
     "authors": [

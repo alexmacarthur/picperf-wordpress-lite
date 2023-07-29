@@ -3,7 +3,7 @@
 /**
  * Plugin Name: PicPerf Lite
  * Plugin URI: https://picperf.dev
- * Description: Automatic "lite" image optimization for the URLs you're already using.
+ * Description: Automatic, non-invasive optimization and aggressive caching for your site's images.
  * Version: 0.0.1
  * Author: Alex MacArthur
  * Author URI: https://macarthur.me
@@ -17,7 +17,7 @@ if (! defined('WPINC')) {
     exit;
 }
 
-const PICPERF_LITE_HOST = 'https://picperf.dev/';
+const PICPERF_LITE_HOST = 'https://picperf.dev/lite/';
 
 $absolutePath = realpath(dirname(__FILE__));
 
@@ -29,7 +29,6 @@ define('PICPERF_LITE_PLUGIN_VERSION', $pluginData['Version']);
 
 require "$absolutePath/src/utils.php";
 require "$absolutePath/src/hooks/plugin-meta.php";
-require "$absolutePath/src/hooks/update.php";
 
 add_filter('wp_get_attachment_image_src', function ($image) {
     if (empty($image)) {

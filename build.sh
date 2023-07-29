@@ -2,9 +2,9 @@
 
 echo "Building production version of plugin..."
 
-rm -rf ../picperf-build
-mkdir -p ../picperf-build/picperf
-cp -a ./ ../picperf-build/picperf
+rm -rf ../picperf-lite-build
+mkdir -p ../picperf-lite-build/picperf-lite
+cp -a ./ ../picperf-lite-build/picperf-lite
 
 FILES_TO_DELETE=(
     "tests"
@@ -16,17 +16,17 @@ FILES_TO_DELETE=(
     "composer.lock"
 )
 
-rm -rf ../picperf-build/picperf/vendor
+rm -rf ../picperf-lite-build/picperf-lite/vendor
 
 for item in "${FILES_TO_DELETE[@]}"; do
-    path_to_delete="../picperf-build/picperf/$item"
+    path_to_delete="../picperf-lite-build/picperf-lite/$item"
     echo "Deleting $path_to_delete"
     rm -rf $path_to_delete
 done
 
-cd ../picperf-build
+cd ../picperf-lite-build
 echo "Zipping..."
-zip -r "picperf.zip" ./picperf
-cd ../picperf
+zip -r "picperf-lite.zip" ./picperf-lite
+cd ../picperf-lite
 
 echo "Done!"
